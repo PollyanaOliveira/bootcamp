@@ -1,3 +1,5 @@
+// Criar uma aplicação no Express e o protocolo HTTP.
+
 const express = require("express");
 
 const app = express();
