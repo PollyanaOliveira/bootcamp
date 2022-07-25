@@ -2,7 +2,8 @@
 
 Usando a array abaixo:
 
-```let products = [
+```bash
+let products = [
 {id: 1, name: 'Macbook', price: 1300, quantity: 40, colors: ['silver', 'black', 'white'] },
 {id: 2, name: 'Iphone', price: 1000, quantity: 50, colors: ['silver', 'red', 'white'] },
 {id: 3, name: 'Pendrive', price: 10, quantity: 10, colors: [] },
@@ -13,7 +14,8 @@ Usando a array abaixo:
 {id: 8, name: 'Keyboard', price: 30, quantity: 35, colors: ['white'] },
 {id: 9, name: 'Gamepad', price: 30, quantity: 25, colors: ['black', 'silver'] },
 {id: 10, name: 'Monitor', price: 200, quantity: 3, colors: [] },
-]```
+];
+```
 
 Vamos criar um CRUD com Router, tendo os seguintes endpoints, usando o
 Postman, nos permitam:
