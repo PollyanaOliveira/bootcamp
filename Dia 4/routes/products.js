@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const isValidPrice = require("../middlewares/product");
 
 let products = require("../products");
 
@@ -28,14 +29,17 @@ router.post("/", (req, res) => {
 
 // 4 - Mudar uma propriedade do produto (qualquer uma)
 
-router.put("/:id", (req, res) => {
+router.put("/:id", isValidPrice, (req, res) => {
   const id = Number(req.params.id);
   const content = req.body;
 
-  const findProduct = products.find((product) => product.id === id);
-  products[findProduct] = content;
+  const product = products.find((product) => product.id === id);
 
-  res.status(200).json({ message: "Updated Product" });
+  if (!product) return res.status(400).json({ message: "Product not found" });
+
+  products = products.map((item) => (item.id === id ? content : product));
+
+  res.status(200).json(products);
 });
 
 // 5 - Deletar um produto utilizando o ID
